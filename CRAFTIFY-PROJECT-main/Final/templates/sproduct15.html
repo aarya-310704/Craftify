@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="imgs/logo-icon.jpg" type="image/x-icon">
+        <title>Craftify</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+
+        <section id="header">
+
+            <a href="#"><img src="{% static 'imgs/logo.png' %}" class="logo" alt="" width="250"></a>
+
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="shopping.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
+                </ul>
+            </div>
+        </section>
+
+        <section id="prodetails" class="section-p1">
+            <div class="single-pro-image">
+                <img src="{% static 'imgs/products/n7.png' %}" width="100%" id="MainImg" alt="">
+            </div>
+
+            <div class="single-pro-details">
+                <h6>Home / Premium Quality Hinges</h6>
+                <h4>Premium Quality Hinges</h4>
+                <h2>Rs. 330.00</h2>
+              <button class="normal" onclick="window.location.href='shopping.html';">Shop Now</button>
+              <h4>Product Details</h4>
+              <span>The Godrej 7213 Silver Full Overlay Slip On Hinge is a versatile hinge designed for door applications in cupboards, shutters, and other similar furniture pieces. Manufactured by Godrej, a reputable brand known for its quality furniture hardware, this hinge offers reliable performance and ease of installation. With the model number 7213, this hinge is designed as a slip-on hinge. It can be easily installed by sliding it onto the edge of the door, eliminating the need for complex hardware or tools.</span>
+            </div>
+        </section>
+
+        <section> 
+            <div class="container">
+                <h1>Product Reviews</h1>
+                
+                <!-- Input Section -->
+                <div id="input-section">
+                    <div class="form-group">
+                        <label for="author">Your Name:</label>
+                        <input type="text" id="author" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Your Review:</label>
+                        <textarea id="content" placeholder="Write your review here"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Product Image:</label>
+                        <input type="file" id="image">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit Review" onclick="addReview()">
+                    </div>
+                </div>
+                
+                <!-- Reviews Section -->
+                <div id="reviews-section">
+                    <!-- Reviews will be displayed here dynamically -->
+                </div>
+                <button id="view-more-btn" style="display: none;" onclick="showAllReviews()">View More</button>
+            </div>
+        
+            <script>
+                window.onload = function() {
+                    var reviews = JSON.parse(localStorage.getItem('product_reviews15')) || [];
+                    displayLatestReviews(reviews);
+                };
+            
+                function addReview() {
+                    var author = document.getElementById('author').value;
+                    var content = document.getElementById('content').value;
+                    var image = document.getElementById('image').files[0];
+            
+                    if (!author || !content) {
+                        alert('Please fill in all fields.');
+                        return;
+                    }
+            
+                    // Convert image to base64 string
+                    var reader = new FileReader();
+                    reader.onload = function(event) {
+                        var imageData = event.target.result;
+            
+                        var review = {
+                            author: author,
+                            content: content,
+                            image: imageData // Store image data directly
+                        };
+            
+                        var reviews = JSON.parse(localStorage.getItem('product_reviews15')) || [];
+                        reviews.push(review);
+                        localStorage.setItem('product_reviews15', JSON.stringify(reviews));
+            
+                        displayLatestReviews(reviews);
+            
+                        document.getElementById('author').value = '';
+                        document.getElementById('content').value = '';
+                        document.getElementById('image').value = '';
+                    };
+            
+                    reader.readAsDataURL(image); // Read image as base64 string
+                }
+            
+                function displayLatestReviews(reviews) {
+                    var reviewsSection = document.getElementById('reviews-section');
+                    reviewsSection.innerHTML = '';
+            
+                    var latestReviews = reviews.slice(Math.max(reviews.length - 3, 0));
+                    latestReviews.forEach(function(review) {
+                        var reviewElement = document.createElement('div');
+                        reviewElement.classList.add('review');
+                        reviewElement.innerHTML = '<p class="author">Name: ' + review.author + '</p>' +
+                                                   '<p class="content">Review: ' + review.content + '</p>';
+                        if (review.image) {
+                            var img = document.createElement('img');
+                            img.src = review.image;
+                            reviewElement.appendChild(img);
+                        }
+                        reviewsSection.appendChild(reviewElement);
+                    });
+            
+                    if (reviews.length > 3) {
+                        document.getElementById('view-more-btn').style.display = 'block';
+                    } else {
+                        document.getElementById('view-more-btn').style.display = 'none';
+                    }
+                }
+            
+                function showAllReviews() {
+                    var reviews = JSON.parse(localStorage.getItem('product_reviews15')) || [];
+                    displayReviews(reviews);
+                    document.getElementById('view-more-btn').style.display = 'none';
+                }
+            
+                function displayReviews(reviews) {
+                    var reviewsSection = document.getElementById('reviews-section');
+                    reviewsSection.innerHTML = '';
+            
+                    reviews.forEach(function(review) {
+                        var reviewElement = document.createElement('div');
+                        reviewElement.classList.add('review');
+                        reviewElement.innerHTML = '<p class="author">Name: ' + review.author + '</p>' +
+                                                   '<p class="content">Review: ' + review.content + '</p>';
+                        if (review.image) {
+                            var img = document.createElement('img');
+                            img.src = review.image;
+                            reviewElement.appendChild(img);
+                        }
+                        reviewsSection.appendChild(reviewElement);
+                    });
+                }
+            </script>
+        </section>
+
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newslettrs</h4>
+                <p>Get E-mail Updates about our latest shop and <span>special offers.</span> </p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Your E-mail Address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="imgs/logo1.png" alt="" width="250">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 6th Floor, MMCOE, Karvenagar, Pune-411052</p>
+                <p><strong>Phone:</strong> +91 9022255589/ +91 9866332608</p>
+                <p><strong>Hours:</strong> 9:00 am - 7:30 pm, Mon - Sat</p>
+            </div>
+
+            <div class="col">
+                <h4>About</h4>
+                <a href="#"  onclick="window.location.href='about.html';">About us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#" onclick="window.location.href='about.html';">Terms & Conditions</a>
+                <a href="#" onclick="window.location.href='contact.html';">Contact Us</a>
+        </div>
+
+        <div class="col">
+                <h4>My Account</h4>
+                <a href="#" onclick="window.location.href='login.html';">Sign In</a>
+                <a href="#" onclick="window.location.href='shopping.html';">View Cart</a>
+                <a href="#" onclick="window.location.href='shopping.html';">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+        </div>
+
+            <div>
+                    <p>Secured Payment Gateways</p>
+                    <img src="imgs/pay.png" alt="">
+            </div>
+
+            <div class="copyright">
+            <p>© 2024, Craftify - All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <script>
+            var MainImg = document.getElementById("MainImg");
+            var smallimg = document.getElementsByClassName("small-img");
+
+            smallimg[0].onclick = function() {
+                MainImg.src = smallimg[0].src;
+            }
+            smallimg[1].onclick = function() {
+                MainImg.src = smallimg[1].src;
+            }
+            smallimg[2].onclick = function() {
+                MainImg.src = smallimg[2].src;
+            }
+            smallimg[3].onclick = function() {
+                MainImg.src = smallimg[3].src;
+            }
+        </script>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>

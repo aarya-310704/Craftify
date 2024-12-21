@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{%load static%}
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/logo-icon.jpg" type="image/x-icon">
+    <title>Craftify</title>
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'js/login.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="#" ><img src="{% static 'imgs/logo.png' %}" class="logo" alt="" width="170"></a>
+            <ul class="links">
+                <span class="close-btn material-symbols-rounded">close</span>
+                
+            </ul>
+            <button class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>
+        <div class="form-box login">
+            <div class="form-details" style="background-image : url('{% static 'imgs/login.jpg' %}');">
+                <h2>Welcome Back</h2>
+                <p>Please log in using your personal information to stay connected with us.</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form action="login.html" method="post">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        <input type="email" id="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <a href="#" class="forgot-pass-link">Forgot password?</a>
+                    <button type="submit" class="btn btn-success">Log In</button>
+                </form>
+                <div class="bottom-link">
+                    Don't have an account?
+                    <a href="#" id="signup-link">Signup</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-box signup">
+            <div class="form-details" style="background-image : url('{% static 'imgs/loginbg.png' %}');">
+                <h2>Create Account</h2>
+                <p>To become a part of our community, please sign up using your personal information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form action="login.html" method="post">
+                    {%csrf_token%}
+                    <div class="input-field">
+                        <input type="email" id="email" name="email" required>
+                        <label>Enter your email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" name="password" required>
+                        <label>Create password</label>
+                    </div>
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy">
+                        <label for="policy">
+                            I agree the
+                            <a href="#" class="option">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign Up</button>
+                </form>
+                <div class="bottom-link">
+                    Already have an account? 
+                    <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="container" class="form-details" style="background-image : url('{% static 'imgs/loginbg.png' %}');">
+        
+        <div class="intro">
+            <h1>Welcome to Craftify,</h1>
+            <h3>your premier destination for all your construction supply procurement needs. </h3>
+            <p>At Craftify, we're dedicated to revolutionizing the way construction professionals, contractors, and project managers source materials, equipment, and services.<br><br>
+                We're on a mission to transform the way construction professionals source materials, equipment, and services, and that's why we're proud to introduce our innovative e-commerce platform.
+            </p>
+            <h2>Your construction proccess starts with,<span> LOGIN...</span></h2>
+
+        </div>
+    </div>
+</body>
+</html>

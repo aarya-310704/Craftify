@@ -1,0 +1,131 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="{% static 'imgs/logo-icon.jpg' %}" type="image/x-icon">
+        <title>Craftify</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    </head>
+
+    <body>
+
+        <section id="header">
+
+            <a href="#"><img src="{% static 'imgs/logo.png' %}" class="logo" alt="" width="170"></a>
+
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shopping.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a class="active" href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="page-header" class="about-header" style="background-image : url('{% static 'imgs/banner/b1.png' %}');">
+            <h2>#KnowUs</h2>
+            <p>Get to know us better!</p>
+        </section>
+
+        <section id="about-head" class="section-p1">
+            <img src="{% static 'imgs/about/a6.jpg' %}" alt="">
+            <div>
+                <h2>Who We Are?</h2>
+                <p>Craftify is your trusted partner in the construction industry, providing high-quality materials and exceptional service to builders, contractors, and do-it-yourself enthusiasts. With a commitment to excellence and a passion for craftsmanship, we strive to empower our customers to bring their construction projects to life with confidence and ease.
+
+                    At Craftify, we understand the importance of using reliable materials to ensure the success and durability of every project. That's why we meticulously source our products from reputable manufacturers, ensuring they meet the highest standards of quality, performance, and safety. Whether you're working on a residential, commercial, or industrial project, you can trust Craftify to provide you with the finest materials that will stand the test of time.</p>
+                <abbr title="">Thank you for choosing Craftify. We look forward to serving you and being a trusted partner in all your construction endeavors.</abbr>
+
+                <br><br>
+
+                <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%" >About Craftify: Your Premier Construction Supplier.</marquee>
+            </div>
+        </section>
+
+        <section id="feature" class="section-p1">
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f1.png' %}" alt="">
+                <h6>Free Shipping</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f2.png' %}" alt="">
+                <h6>Online Order</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f3.png' %}" alt="">
+                <h6>Save Money</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f4.png' %}" alt="">
+                <h6>Promotions</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f5.png' %}" alt="">
+                <h6>Happy Sell</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f6.png' %}" alt="">
+                <h6>24/7 Support</h6>
+            </div>
+        </section>
+
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newslettrs</h4>
+                <p>Get E-mail Updates about our latest shop and <span>special offers.</span> </p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Your E-mail Address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="{% static 'imgs/logo1.png' %}" alt="" width="250">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 6th Floor, MMCOE, Karvenagar, Pune-411052</p>
+                <p><strong>Phone:</strong> +91 9022255589/ +91 9866332608</p>
+                <p><strong>Hours:</strong> 9:00 am - 7:30 pm, Mon - Sat</p>
+            </div>
+
+            <div class="col">
+                <h4>About</h4>
+                <a href="#"  onclick="window.location.href='about.html';">About us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#" onclick="window.location.href='about.html';">Terms & Conditions</a>
+                <a href="#" onclick="window.location.href='contact.html';">Contact Us</a>
+        </div>
+
+        <div class="col">
+                <h4>My Account</h4>
+                <a href="#" onclick="window.location.href='login.html';">Sign In</a>
+                <a href="#" onclick="window.location.href='shopping.html';">View Cart</a>
+                <a href="#" onclick="window.location.href='shopping.html';">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+        </div>
+
+            <div>
+                    <p>Secured Payment Gateways</p>
+                    <img src="{% static 'imgs/pay.png'%}" alt="">
+            </div>
+
+            <div class="copyright">
+            <p>© 2024, Craftify - All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="imgs/logo-icon.jpg" type="image/x-icon">
+<title>Craftify</title>
+<style>
+
+    #header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 80px;
+        background: #2d3032;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        z-index: 999;
+        position: sticky;
+        top: 0;
+        left: 0;
+    
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #receipt {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+        display: flex;
+        justify-content: center;
+    }
+    h2 {
+        margin-top: 10px;
+        background-color: #d2d3d3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+    button {
+        padding: 10px;
+        border: none;
+        border-radius: 25px;
+        background-color: #2d3032;
+        color: #fff;
+        cursor: pointer;
+        margin-left: 130px;
+        width: 160px;
+    }
+    button:hover {
+        background-color: #bb3ffe;
+    }
+</style>
+</head>
+<body>
+
+    <section id="header">
+
+        <a href="#"><img src="{% static 'imgs/logo.png' %}" class="logo" alt="" width="170"></a>
+
+    </section>
+
+<div id="receipt">
+    <h2>Payment Receipt</h2>
+    <p>Payment Amount: Rs. <span id="receipt-amount"></span></p>
+    <p>Payment Method: <span id="receipt-method"></span></p>
+    <button onclick="downloadReceipt()">Download Receipt</button>
+</div>
+
+<script>
+    function downloadReceipt() {
+        // Temporarily hide the download button
+        var downloadButton = document.querySelector('button');
+        downloadButton.style.display = 'none';
+
+        var receiptContent = document.getElementById('receipt').innerHTML;
+        var filename = "payment_receipt.html";
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(receiptContent));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+
+        // Restore the download button
+        downloadButton.style.display = 'block';
+    }
+
+    // Retrieve payment details from URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var method = urlParams.get('method');
+    var amount = urlParams.get('amount');
+
+    // Display payment details
+    if (method && amount) {
+        document.getElementById('receipt-amount').textContent = amount;
+        document.getElementById('receipt-method').textContent = method.toUpperCase();
+    } else {
+        // Handle missing parameters
+        document.getElementById('receipt').innerHTML = "<h2>Error: Missing Payment Details</h2>";
+    }
+</script>
+
+</body>
+</html>

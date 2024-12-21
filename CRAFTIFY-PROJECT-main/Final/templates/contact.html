@@ -1,0 +1,132 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="{% static 'imgs/logo-icon.jpg' %}" type="image/x-icon">
+        <title>Craftify</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+
+        <section id="header">
+
+            <a href="#"><img src="{% static 'imgs/logo.png' %}" class="logo" alt="" width="170"></a>
+
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shopping.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a class="active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="page-header" class="about-header" style="background-image : url('{% static 'imgs/banner/b1.png' %}');">
+            <h2>#let's_talk</h2>
+            <p>LEAVE A MESSAGE, We Love To Hear From You!</p>
+        </section>
+
+        <section id="contact-details" class="section-p1">
+            <div class="details">
+                <span>GET IN TOUCH</span>
+                <h2>Visit one of our agency locations or contact us today.</h2>
+                <h3>Head Office</h3>
+                <div>
+                    <li>
+                        <i class="fal fa-map"></i>
+                        <p>6th Floor, MMCOE, Karvenagar, Pune-411052</p>
+                    </li>
+                    <li>
+                        <i class="fal fa-envelope"></i>
+                        <p>craftify@gmail.com</p>
+                    </li>
+                    <li>
+                        <i class="fal fa-phone-alt"></i>
+                        <p>+91 9022255589/ +91 9866332608</p>
+                    </li>
+                    <li>
+                        <i class="fal fa-clock"></i>
+                        <p>9:00 am - 7:30 pm, Mon - Sat</p>
+                    </li>
+                </div>
+            </div>
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.8400194047736!2d73.80942537436714!3d18.49090437008136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfdb320ec161%3A0x4affb66aab04c6d8!2sMarathwada%20Mitra%20Mandal%20College%20of%20Engineering%20Rd%2C%20Karve%20Nagar%2C%20Pune%2C%20Maharashtra%20411052!5e0!3m2!1sen!2sin!4v1709143609585!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+            </div>
+        </section>
+
+        <section id="form-details" class="section-p1">
+            <form action="contact.html" method="post">
+                {% csrf_token %}
+                <span>LEAVE A MESSAGE</span>
+                <h2>We love to hear from you</h2>
+                <input type="text" id="name" name="name" placeholder="Your Name">
+                <input type="email" id="email" name="email" placeholder="E-mail">
+                <input type="text" id="subject" name="subject" placeholder="Subject">
+                <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Your Message"></textarea>
+                <button class="submit" type="btn btn-success">Submit</button>
+            </form>
+        </section>
+
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newslettrs</h4>
+                <p>Get E-mail Updates about our latest shop and <span>special offers.</span> </p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Your E-mail Address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="{% static 'imgs/logo1.png' %}" alt="" width="250">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 6th Floor, MMCOE, Karvenagar, Pune-411052</p>
+                <p><strong>Phone:</strong> +91 9022255589/ +91 9866332608</p>
+                <p><strong>Hours:</strong> 9:00 am - 7:30 pm, Mon - Sat</p>
+            </div>
+
+            <div class="col">
+                    <h4>About</h4>
+                    <a href="#" onclick="window.location.href='about.html';">About us</a>
+                    <a href="#">Delivery Information</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#" onclick="window.location.href='contact.html';">Contact Us</a>
+            </div>
+
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#" onclick="window.location.href='login.html';">Sign In</a>
+                <a href="#" onclick="window.location.href='shopping.html';">View Cart</a>
+                <a href="#" onclick="window.location.href='shopping.html';">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+        </div>
+
+            <div>
+                    <p>Secured Payment Gateways</p>
+                    <img src="{% static 'imgs/pay.png' %}" alt="">
+            </div>
+
+            <div class="copyright">
+            <p>© 2024, Craftify - All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <script src="{% static 'js/checkout.js' %}"></script>
+    </body>
+
+</html>

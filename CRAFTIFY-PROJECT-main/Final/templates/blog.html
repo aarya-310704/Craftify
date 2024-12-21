@@ -1,0 +1,162 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="{% static 'imgs/logo-icon.jpg' %}" type="image/x-icon">
+        <title>Craftify</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+
+        <section id="header">
+
+            <a href="#"><img src="{% static 'imgs/logo.png' %}" class="logo" alt="" width="170"></a>
+
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shopping.html">Shop</a></li>
+                    <li><a class="active" href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="page-header" class="blog-header" style="background-image : url('{% static 'imgs/banner/b1.png' %}');">
+            <h2>#readmore</h2>
+            <p>Read all case studies about our products!</p>
+        </section>
+
+        <section id="blog">
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="{% static 'imgs/blog/b1.jpg' %}" alt="">
+                </div>
+                <div class="blog-details">
+                <h4>Wood Basics</h4>
+                <p>Early builders learned by trial and error which wood species to use and which wood from trees grown in certain locations and under certain conditions was stronger, more easily worked—or finer grained—than wood from other locations. White oak, for example, is tough, strong, and durable, which made it a prized choice for shipbuilding, bridges, barn timbers, fence posts, and flooring. Woods such as black walnut and cherry, on the other hand, were primarily valued as cabinet woods. Hickory was made into tough, resilient tool handles. Black locust was prized for barn timbers and trunnels (or “treenails”—the stout pegs used for joining timber frames). Modern research—much of it performed by the Forest Products Laboratory and through wood research programs at a handful of universities worldwide.</p>
+                </div>
+                <h1>13/01</h1>
+            </div>
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="{% static 'imgs/blog/b2.jpg' %}" alt="">
+                </div>
+                <div class="blog-details">
+                <h4>What to Look For in Exterior Wood Finishes</h4>
+                <p>The choice of exterior wood finishes is dependent on the manner in which it will be used.
+    
+                    All-acrylic latex paints are the most durable house paints, but oil-based paint films usually provide the best protection from water and water vapor.  Although latex paints allow water to pass through more readily, they adhere better when wood swells and shrinks.
+                        
+                    High-gloss paints last longer than low-gloss paints, because they contain more paint resin and less pigment.  Solid-color stains are best for textured or rough-sawn lumber, and over existing paints.
+                        
+                    Water-repellent preservatives prevent warping and checking.  Water-repellent preservatives that are paintable decrease the shrinking and swelling of wood by preventing dew and rain from penetrating the wood.</p>
+                </div>
+                <h1>19/03</h1>
+            </div>
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="{% static 'imgs/blog/b3.jpg' %}" alt="">
+                </div>
+                <div class="blog-details">
+                <h4>How to Repair Your Wood Siding</h4>
+                <p>Wood siding, for all of its classic elegance and historical significance, can require a lot of upkeep. Beyond the usual scraping and painting, there will be times when it needs a little more than just a fresh coat to hide its blemishes. The good news is that regardless of the type of wood or style of board – even shingled siding, the methods are similar.
+
+                    First, depending on the nature of the damage, you should determine the cause and fix that before attempting your repair. For example, if leaky gutters or bad downspouts are the reason, those issues should be addressed before repairing the damaged wood.If the wood is cracked or dented, then some filler and sanding may be all you need prior to painting. If there is a split or worse, all is not lost. The boards can be replaced with relative ease.</p>
+                </div>
+                <h1>12/01</h1>
+            </div>
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="{% static 'imgs/blog/b4.jpg' %}" alt="">
+                </div>
+                <div class="blog-details">
+                <h4>How to Pour Footings for a Deck</h4>
+                <p>Taking your time and pouring footings properly will give your deck a more stable, durable base for many years of enjoyable use. To pour footings…
+                    Determine the necessary size for the footings and plan for adequate materials, including enough concrete, gravel, and footing forms.
+                    Dig holes slightly deeper than necessary. You can dig by hand or use a power auger for faster, more even holes. The overall depth will vary based on your local conditions.
+                    Add several inches of gravel to the base of the hole and tamp it down to provide a secure base for the bottom of the footing.
+                    Place the footing form or tube into the hole, and backfill the hole with dirt to keep the form level and even.</p>
+                </div>
+                <h1>25/04</h1>
+            </div>
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="{% static 'imgs/blog/b5.jpg' %}" alt="">
+                </div>
+                <div class="blog-details">
+                <h4>4 Tips for Complex Roofing Projects</h4>
+                <p>The challenges that accompany every remodeling project are multiplied when it comes to homeowner association remodels. And when working on projects of immense size, the stakes are high for both contractors and residents. 
+
+                    La Rocque Better Roofs, a contractor serving southern California for nearly 40 years, draws 80% of its business from projects involving homeowner associations, which require all the moving parts of a single-family home renovation, but on a much more extensive scale. Last year, the company took on a re-roofing project that involved 185 units along with a clubhouse, standalone garage, and park restroom building—resulting in the need for 250,000 square feet of shingles across the property.</p>
+                </div>
+                <h1>17/05</h1>
+            </div>
+        </section>
+
+        <section id="pagination" class="section-p1">
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href=""><i class="fal fa-long-arrow-alt-right"></i></a>
+        </section>
+
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newslettrs</h4>
+                <p>Get E-mail Updates about our latest shop and <span>special offers.</span> </p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Your E-mail Address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="{% static 'imgs/logo1.png' %}" alt="" width="250">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 6th Floor, MMCOE, Karvenagar, Pune-411052</p>
+                <p><strong>Phone:</strong> +91 9022255589/ +91 9866332608</p>
+                <p><strong>Hours:</strong> 9:00 am - 7:30 pm, Mon - Sat</p>
+            </div>
+
+            <div class="col">
+                <h4>About</h4>
+                <a href="#"  onclick="window.location.href='about.html';">About us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#" onclick="window.location.href='about.html';">Terms & Conditions</a>
+                <a href="#" onclick="window.location.href='contact.html';">Contact Us</a>
+        </div>
+
+        <div class="col">
+                <h4>My Account</h4>
+                <a href="#" onclick="window.location.href='login.html';">Sign In</a>
+                <a href="#" onclick="window.location.href='shopping.html';">View Cart</a>
+                <a href="#" onclick="window.location.href='shopping.html';">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+        </div>
+
+            <div>
+                    <p>Secured Payment Gateways</p>
+                    <img src="{% static 'imgs/pay.png' %}" alt="">
+            </div>
+
+            <div class="copyright">
+            <p>© 2024, Craftify - All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>

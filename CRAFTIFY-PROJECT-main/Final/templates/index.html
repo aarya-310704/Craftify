@@ -1,0 +1,283 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="imgs/logo-icon.jpg" type="image/x-icon">
+        <title>Craftify</title>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+
+        <section id="header">
+
+            <a href="#"><img src="{%static 'imgs/logo.png'%}" class="logo" alt="" width="170"></a>
+
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="shopping.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="hero" style="background-image : url('{% static 'imgs/hero4.png' %}');">
+            <h4>Trade-in-offer</h4>
+            <h2>Super value deals</h2>
+            <h1>On all products</h1>
+            <p>Save more with coupons & up to 70% off!</p>
+            <button style="background-image : url('{% static 'imgs/button.png' %}');" onclick="window.location.href='shopping.html';">Shop Now</button>
+        </section>
+
+        <section id="feature" class="section-p1">
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f1.png' %}" alt="">
+                <h6>Free Shipping</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f2.png' %}" alt="">
+                <h6>Online Order</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f3.png' %}" alt="">
+                <h6>Save Money</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f4.png' %}" alt="">
+                <h6>Promotions</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f5.png' %}" alt="">
+                <h6>Happy Sell</h6>
+            </div>
+            <div class="fe-box">
+                <img src="{% static 'imgs/features/f6.png' %}" alt="">
+                <h6>24/7 Support</h6>
+            </div>
+        </section>
+
+        <section id="product1" class="section-p1">
+            <h2>Featured Products</h2>
+            <p>Builder's Collection New Morden Equipments</p>
+            <div class="pro-container">
+                <div class="pro" onclick="window.location.href='sproduct1.html';">
+                    <img src="{% static 'imgs/products/f1.png' %}" alt="">
+                    <div class="des">
+                        <span>GD Bricks</span>
+                        <h5>High-Quality Red Clay Bricks</h5>
+                        <h4>Rs. 7.38</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct2.html';">
+                    <img src="{% static 'imgs/products/f2.png' %}" alt="">
+                    <div class="des">
+                        <span>Tenso Structures</span>
+                        <h5>Premium Roofing Shingles</h5>
+                        <h4>Rs. 50.00</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct3.html';">
+                    <img src="{% static 'imgs/products/f3.png' %}" alt="">
+                    <div class="des">
+                        <span>JSW Steel</span>
+                        <h5>Galvanized Steel Metal Rods</h5>
+                        <h4>Rs. 40.35</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct4.html';">
+                    <img src="{% static 'imgs/products/f4.png' %}" alt="">
+                    <div class="des">
+                        <span>Ecorex AAC Block</span>
+                        <h5>Versatile Concrete Blocks</h5>
+                        <h4>Rs. 10.00</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct5.html';">
+                    <img src="{% static 'imgs/products/f5.png' %}" alt="">
+                    <div class="des">
+                        <span>Asian Paints</span>
+                        <h5>Apex Floor Guard (4 Litre)</h5>
+                        <h4>Rs. 3,999</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct6.html';">
+                    <img src="{% static 'imgs/products/f6.png' %}" alt="">
+                    <div class="des">
+                        <span>Asahi India Glass Ltd.</span>
+                        <h5>Highly Durable And Designer Glass</h5>
+                        <h4>Rs. 514.00</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct7.html';">
+                    <img src="{% static 'imgs/products/f7.png' %}" alt="">
+                    <div class="des">
+                        <span>Indigo Paints</span>
+                        <h5>Premium Interior Paint</h5>
+                        <h4>Rs. 1,450</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct8.html';">
+                    <img src="{% static 'imgs/products/f8.png' %}" alt="">
+                    <div class="des">
+                        <span>Monier Roof Tile</span>
+                        <h5>Classic Clay Roofing Tiles</h5>
+                        <h4>Rs. 50.00</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="banner" class="section-m1" style="background-image : url('{%static 'imgs/banner/b2.png' %}');">
+            <h4>Repair Services</h4>
+            <h2>Up to <span>70% off</span> - All Supplies and Tools</h2>
+            <button class="normal" onclick="window.location.href='shopping.html';">Explore More</button>
+        </section>
+
+        <section id="product1" class="section-p1">
+            <h2>New Arrivals</h2>
+            <p>Builder's Collection New Morden Equipments</p>
+            <div class="pro-container">
+                <div class="pro" onclick="window.location.href='sproduct9.html';">
+                    <img src="{% static 'imgs/products/n1.png' %}" alt="">
+                    <div class="des">
+                        <span>Spike Nails</span>
+                        <h5>1.5'' Iron Nail (100 pcs)</h5>
+                        <h4>Rs. 70.45</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct10.html';">
+                    <img src="{% static 'imgs/products/n2.png' %}" alt="">
+                    <div class="des">
+                        <span>Kitply Industries Ltd.</span>
+                        <h5>Premium Quality Plywood</h5>
+                        <h4>Rs. 6,499</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct11.html';">
+                    <img src="{% static 'imgs/products/n3.png' %}" alt="">
+                    <div class="des">
+                        <span>Havells Switches</span>
+                        <h5>Two Way Switches</h5>
+                        <h4>Rs. 240.35</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct12.html';">
+                    <img src="{% static 'imgs/products/n4.png' %}" alt="">
+                    <div class="des">
+                        <span>Polycab</span>
+                        <h5>Unsheathed Industrial Cable </h5>
+                        <h4>Rs. 1,335</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct13.html';">
+                    <img src="{% static 'imgs/products/n5.png' %}" alt="">
+                    <div class="des">
+                        <span>AKS Door Handles</span>
+                        <h5>Stylish Door Handles</h5>
+                        <h4>Rs. 1,805.45</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct14.html';">
+                    <img src="{% static 'imgs/products/n6.png' %}" alt="">
+                    <div class="des">
+                        <span>Durian</span>
+                        <h5>Havana Door (PU-painted)</h5>
+                        <h4>Rs. 6,499</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct15.html';">
+                    <img src="{% static 'imgs/products/n7.png' %}" alt="">
+                    <div class="des">
+                        <span>Godrej</span>
+                        <h5>Premium Quality Hinges</h5>
+                        <h4>Rs. 330.00</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+                <div class="pro" onclick="window.location.href='sproduct16.html';">
+                    <img src="{% static 'imgs/products/n8.png' %}" alt="">
+                    <div class="des">
+                        <span>UltraTech</span>
+                        <h5>Xtralite ACC Blocks (4'')</h5>
+                        <h4>Rs. 47.00</h4>
+                    </div>
+                    <button class="normal">View</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="section-p1 section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newslettrs</h4>
+                <p>Get E-mail Updates about our latest shop and <span>special offers.</span> </p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Your E-mail Address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="{% static 'imgs/logo1.png'%}" alt="" width="250">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> 6th Floor, MMCOE, Karvenagar, Pune-411052</p>
+                <p><strong>Phone:</strong> +91 9022255589/ +91 9866332608</p>
+                <p><strong>Hours:</strong> 9:00 am - 7:30 pm, Mon - Sat</p>
+            </div>
+
+            <div class="col">
+                    <h4>About</h4>
+                    <a href="#"  onclick="window.location.href='about.html';">About us</a>
+                    <a href="#">Delivery Information</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#" onclick="window.location.href='about.html';">Terms & Conditions</a>
+                    <a href="#" onclick="window.location.href='contact.html';">Contact Us</a>
+            </div>
+
+            <div class="col">
+                    <h4>My Account</h4>
+                    <a href="#" onclick="window.location.href='login.html';">Sign In</a>
+                    <a href="#" onclick="window.location.href='shopping.html';">View Cart</a>
+                    <a href="#" onclick="window.location.href='shopping.html';">My Wishlist</a>
+                    <a href="#">Track My Order</a>
+                    <a href="#">Help</a>
+            </div>
+
+            <div>
+                    <p>Secured Payment Gateways</p>
+                    <img src="{% static 'imgs/pay.png'%}" alt="">
+            </div>
+
+            <div class="copyright">
+            <p>© 2024, Craftify - All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
